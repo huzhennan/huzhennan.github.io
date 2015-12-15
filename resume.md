@@ -46,7 +46,7 @@ permalink: /resume/
 	+ 基于OpenERP二次开发
 
 ##总结	
-* 列了这么多，只是想说，我并不是一个html/css/javascript熟练的前端，可如果你需要，我可以是一个牛B**前端工程师**。
+* 列了这么多，只是想说，我并不是一个html/css/javascript熟练的前端，可如果你需要，我也很乐意成为了一个牛B**前端工程师**。
 * 学过的语言：C\C++, Lisp, Java, Python, Ruby, HTML/CSS/Coffeescript，别问我精通哪门。。。
 这些也只是想说**学习能力还OK**,基本熟悉一段时间，都能上手。
 
