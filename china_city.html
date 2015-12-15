@@ -2,18 +2,15 @@
 layout: default
 title: "城市选择"
 ---
+<h2>在jekyll中实现中国城市选择演示</h2>
 <div>
 <select id="province-select" data_init="120000"></select>
 <select id="city-select" data_init="120100"></select>
 <select id="district-select"></select>
 <div>
-<div>
-	<ul>
-		{% for province in site.data.areas.province %}
-			<li>{{ province.text }}</li>
-		{% endfor %}	
-	</ul>
-<div>
+<br>	
+<p>您选择的地址是:<span id="val-city-select"></span></p>
+<br>	
 <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="assets/js/province_data.js"></script>
 <script src="assets/js/city_data.js"></script>

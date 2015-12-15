@@ -99,18 +99,37 @@ $ ->
 	initDistrict = ->
 		city_id = node_city_select.attr("data_init") || node_city_select.val()
 		district_selected = node_district_select.attr("data_init")
-		updateDistrict(city_id, district_selected)			
+		updateDistrict(city_id, district_selected)
+		
+	displayResult = ->
+		$("#val-city-select").html ''
+		state = if $('#province-select option:selected').val() != "" then $('#province-select option:selected').html() else ""
+		city = if $('#city-select option:selected').val() != "" then $('#city-select option:selected').html() else ""
+		district = if $('#district-select option:selected').val() != "" then $('#district-select option:selected').html() else ""
+		$("#val-city-select").html("#{state}#{city}#{district}") 
+		
 
 	init = ->
 		initState()
 		initCity()
 		initDistrict()
+		displayResult()
 	
 	init()
 	
 	node_state_select.change ->
 		updateCity node_state_select.val()
 		init_select_node(node_district_select)
+		displayResult()
+		return
 		
 	node_city_select.change ->
-		updateDistrict node_city_select.val()	
+		updateDistrict node_city_select.val()
+		displayResult()
+		return
+		
+	node_district_select.change ->
+		displayResult()
+		return	
+
+		
