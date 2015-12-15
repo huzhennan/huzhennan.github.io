@@ -1,0 +1,21 @@
+---
+layout: default
+title: "城市选择"
+---
+<div>
+<select id="province-select"></select>
+<select id="city-select"></select>
+<select id="district-select"></select>
+<div>
+<div>
+	<ul>
+		{% for province in site.data.areas.province %}
+			<li>{{ province.text }}</li>
+		{% endfor %}	
+	</ul>
+<div>
+<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+<script src="assets/js/province_data.js"></script>
+<script src="assets/js/city_data.js"></script>
+<script src="assets/js/district_data.js"></script>
+<script src="assets/js/china_city.js"></script>
