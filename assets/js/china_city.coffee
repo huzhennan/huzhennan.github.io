@@ -4,7 +4,9 @@
 $ ->
 	PATTERN = /(\d{2})(\d{2})(\d{2})/
 	
-	node_state_select = $('#province-select')		
+	node_state_select = $('#province-select')
+	node_city_select = $('#city-select')
+	node_district_select = $('#district-select')		
 	
 	province_code = (code) ->
 		code.replace(PATTERN, "$10000")
@@ -54,7 +56,6 @@ $ ->
 				do (id, name) ->
 					opt = $(document.createElement('option')).attr('value', id).html(name)
 					if selected? and (selected is id)
-						console.log name
 						opt.prop 'selected', true
 					node_state_select.append(opt)
 					return
@@ -63,9 +64,53 @@ $ ->
 	initState = ->
 		state_id = node_state_select.attr("data_init") || node_state_select.val()		
 		updateState(state_id)
+	
+	updateCity = (state_id, selected=null) ->
+		init_select_node(node_city_select)
+		cities = data()[state_id].cities
+		if cities?
+			do (cities) ->
+				for own id, city of cities
+					name = city.text
+					opt = $(document.createElement('option')).attr('value', id).html(name)
+					if selected? and (selected is id)
+						opt.prop 'selected', true
+					node_city_select.append(opt)
+		
+	initCity = ->
+		state_id = node_state_select.attr("data_init") || node_state_select.val()
+		city_selected = node_city_select.attr("data_init")
+		updateCity(state_id, city_selected)
+		
+	updateDistrict = (city_id, selected=null) ->
+		init_select_node(node_district_select)
+		pid = province_code(city_id)
+		cities = data()[pid].cities
+		districts = cities[city_id].districts
+		if districts?
+			do (districts) ->
+				for own id, district of districts
+					name = district.text
+					opt = $(document.createElement('option')).attr('value', id).html(name)
+					if selected? and (selected is id)
+						opt.prop 'selected', true
+					node_district_select.append(opt)
+		
+	initDistrict = ->
+		city_id = node_city_select.attr("data_init") || node_city_select.val()
+		district_selected = node_district_select.attr("data_init")
+		updateDistrict(city_id, district_selected)			
 
 	init = ->
 		initState()
+		initCity()
+		initDistrict()
 	
 	init()
 	
+	node_state_select.change ->
+		updateCity node_state_select.val()
+		init_select_node(node_district_select)
+		
+	node_city_select.change ->
+		updateDistrict node_city_select.val()	
