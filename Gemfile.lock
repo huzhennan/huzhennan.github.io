@@ -1,4 +1,5 @@
 GEM
+  remote: https://ruby.taobao.org/
   specs:
     coffee-script (2.4.1)
       coffee-script-source
@@ -41,3 +42,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-coffeescript
+
+BUNDLED WITH
+   1.10.6
