@@ -58,4 +58,21 @@ li {
   .mw-100-print {
     max-width: 100%;
   }
+
+  .site-header {
+    display: none;
+  }
+
+  .site-footer {
+    display: none;
+  }
+
+  h1, h2, p, ul {
+    margin: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: 20px;
+  }
 }
