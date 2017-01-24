@@ -62,11 +62,13 @@ permalink: /resume/
 其他
 ----
   - 熟悉 HTML、CSS、Javascript 基本语言结构
-  - 熟悉 ruby on rails
+  - 掌握前端技术，可使用reactjs开发前端页面
+  - 熟悉 ruby on rails, Django框架
   - 熟练使用 Linux 系统(平时使用ubuntu),熟练常用 Linux 命令,理解 Shell 脚本
   - 熟练使用 git 版本库管理工具
-  - 熟悉 Java、C/C++语言
-
+  - 熟悉 Java,C/C++,Ruby,Python语言
+  - 熟练使用数据库 Redis, PostgreSQL
+  - 熟悉面向对象编程
 
 
 	
